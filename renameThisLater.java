@@ -12,7 +12,7 @@ public class Monkey {
   int[] monkeyAges = new int[5];
   double[] monkeyHeights = new double[5];
   
-  public Monkey(int age; String monkeyName; char monkeyGender; double monkeyHeight) {
+  public Monkey(int age, String monkeyName, char monkeyGender, double monkeyHeight) {
     monkeyName = name;
     
     monkeyList.add()
