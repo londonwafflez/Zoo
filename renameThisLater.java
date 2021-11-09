@@ -1,41 +1,24 @@
-import java.util.ArrayList;
-
-public class Monkey {
-
-  String name;
+public class Dog {
+  String breed;
+  boolean hasOwner;
   int age;
-  String gender;
-  double height;
   
-  ArrayList generalInfoList = new ArrayList();
-  public ArrayList<String> monkeyList = new ArrayList<String>();
-  int[] monkeyAges = new int[5];
-  double[] monkeyHeights = new double[5];
-  
-  public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
-    age = monkeyAge;
-    name = monkeyName;
-    height = monkeyHeight;
-    if (monkeyGender == 'm' || monkeyGender == 'M') {
-        gender = "male";
-    } else if (monkeyGender == 'f' || monkeyGender == 'F') {
-        gender = "female";
-    } else {
-        gender = "other";
-    }
-    monkeyList.add(name);
-    System.out.println(name + ", the monkey has been registered.");
+  public Dog(String dogBreed, boolean dogOwned, int dogYears) {
+    System.out.println("Constructor invoked!");
+    breed = dogBreed;
+    hasOwner = dogOwned;
+    age = dogYears;
   }
-  
-  
   
   public static void main(String[] args) {
-  Monkey Henry = new Monkey("Henry", 4, 'm', 11.1);
-  Monkey Jill = new Monkey("Jill", 4, 'f', 10.5);
-  
+    System.out.println("Main method started");
+    Dog fido = new Dog("poodle", false, 4);
+    Dog nunzio = new Dog("shiba inu", true, 12);
+    boolean isFidoOlder = fido.age > nunzio.age;
+    int totalDogYears = nunzio.age + fido.age;
+    System.out.println("Two dogs created: a " + fido.breed + " and a " + nunzio.breed);
+    System.out.println("The statement that fido is an older dog is: " + isFidoOlder);
+    System.out.println("The total age of the dogs is: " + totalDogYears);
+    System.out.println("Main method finished");
   }
-  
-  public String toString() {
-  return name + ", the " + gender + " monkey is " + age + " years old";
-  }
-} 
+}
