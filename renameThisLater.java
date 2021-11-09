@@ -12,17 +12,16 @@ public class Monkey {
   int[] monkeyAges = new int[5];
   double[] monkeyHeights = new double[5];
   
-  public Monkey(int monkeyAge, String monkeyName, char monkeyGender, double monkeyHeight) {
+  public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
     age = monkeyAge;
     name = monkeyName;
     height = monkeyHeight;
-    if (monkeyGender.equals('m') || monkeyGender.equals('M')) {
+    if (monkeyGender == 'm' || monkeyGender == 'M') {
         gender = "male";
-    } else if (monkeyGender.equals('f') || monkeyGender.equals('F')) {
+    } else if (monkeyGender == 'f' || monkeyGender == 'F') {
         gender = "female";
     } else {
         gender = "other";
-    }
     }
     monkeyList.add(name);
     System.out.println(name + ", the monkey has been registered.");
@@ -31,7 +30,9 @@ public class Monkey {
   
   
   public static void main(String[] args) {
-  System.out.println("Running");
+  Monkey Henry = new Monkey("Henry", 4, 'm', 11.1);
+  Monkey Jill = new Monkey("Jill", 4, 'f', 10.5);
+  
   }
   
   public String toString() {
