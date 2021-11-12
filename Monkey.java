@@ -35,10 +35,6 @@
       System.out.println(this.name + ", the monkey has been registered.");
     }
 
-    public void passYear(int yearsPassed) {
-      this.age += 1;
-    }
-
     public void addMonkeyToList() {
       
       monkeyList.add(this);
