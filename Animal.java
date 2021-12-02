@@ -1,1 +1,5 @@
-class Animal {}
+package Zoo;
+
+public class Animal {
+    
+}

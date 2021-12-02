@@ -1,20 +1,21 @@
+package Zoo;
   //Importing ArrayList
   import java.util.ArrayList;
-  import java.util.Random;
+
 
   public class Monkey extends Animal {
   
     //Defining variables for later
     final String name;
-    private int age;
-    private String gender;
-    private double height;
+    public int age;
+    public String gender;
+    public double height;
     
     //Defining lists
-    static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
-    static ArrayList<String> monkeyNames = new ArrayList<String>();
-    static int[] monkeyAges = new int[5];
-    static double[] monkeyHeights = new double[5];
+    public ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
+    public ArrayList<String> monkeyNames = new ArrayList<String>();
+    public int[] monkeyAges = new int[5];
+    public double[] monkeyHeights = new double[5];
     
     //constructor for creating a Monkey
     public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
