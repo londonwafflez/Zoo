@@ -3,14 +3,7 @@ package Zoo;
   import java.util.ArrayList;
 
 
-  public class Monkey extends Zoo {
-  
-    
-    //Defining variables for later
-    final String name;
-    public int age;
-    public String gender;
-    public double height;
+  public class Monkey extends Animal {
     
     //Defining lists
     public static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
@@ -20,20 +13,25 @@ package Zoo;
     
 
     //constructor for creating a Monkey
+
+    
     public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
+
+      super(monkeyName, monkeyAge, monkeyGender, monkeyHeight);
+
       //Sync added values to more public ones
-      this.age = monkeyAge;
-      this.name = monkeyName;
-      this.height = monkeyHeight;
+      // this.age = monkeyAge;
+      // this.name = monkeyName;
+      // this.height = monkeyHeight;
   
-      //Taking char and making it a string for gender
-      if (monkeyGender == 'm' || monkeyGender == 'M') {
-          this.gender = "male";
-      } else if (monkeyGender == 'f' || monkeyGender == 'F') {
-          this.gender = "female";
-      } else {
-          this.gender = "other";
-      }
+      // //Taking char and making it a string for gender
+      // if (monkeyGender == 'm' || monkeyGender == 'M') {
+      //     this.gender = "male";
+      // } else if (monkeyGender == 'f' || monkeyGender == 'F') {
+      //     this.gender = "female";
+      // } else {
+      //     this.gender = "other";
+      // }
   
       System.out.println(this.name + ", the monkey has been registered.");
     }
