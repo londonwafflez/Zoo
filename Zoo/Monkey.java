@@ -3,8 +3,9 @@ package Zoo;
   import java.util.ArrayList;
 
 
-  public class Monkey extends Animal {
+  public class Monkey extends Zoo {
   
+    
     //Defining variables for later
     final String name;
     public int age;
@@ -12,11 +13,12 @@ package Zoo;
     public double height;
     
     //Defining lists
-    public ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
-    public ArrayList<String> monkeyNames = new ArrayList<String>();
-    public int[] monkeyAges = new int[5];
-    public double[] monkeyHeights = new double[5];
+    public static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
+    public static ArrayList<String> monkeyNames = new ArrayList<String>();
+    public static int[] monkeyAges = new int[5];
+    public static double[] monkeyHeights = new double[5];
     
+
     //constructor for creating a Monkey
     public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
       //Sync added values to more public ones
