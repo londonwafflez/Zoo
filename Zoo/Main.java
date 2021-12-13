@@ -32,10 +32,11 @@ public class Main {
             System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
             String reqMonName = Habitat.keyboard.nextLine();
 
-            reqMonName.getMonkeyInfo();
+            reqMonName.IndexOf
 
             int reqMonOut = (int)(Math.random() * 3 - 1 + 1) - 1;
-
+               
+            //uSE MATCHINg name stuff with something or something then find in monkey list
             switch (reqMonOut) {
                 case 1:
                     System.out.println(reqMon);
