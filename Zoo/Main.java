@@ -27,10 +27,12 @@ public class Main {
         // System.out.println(Henry.name + " is " + Henry.age + " and likes to dance.");
         // System.out.println("What do we know about Emma? \n" + Emma.getMonkeyInfo());
 
-        while (!(reqMonInfo.name.equalsIgnoreCase("Next"))) {
+        String reqMonName;
+        
+        while (!(reqMonName.equalsIgnoreCase("Next"))) {
 
             System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
-            String reqMonName = Habitat.keyboard.nextLine();
+            reqMonName = Habitat.keyboard.nextLine();
 
             int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
             
