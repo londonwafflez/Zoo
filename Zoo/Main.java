@@ -33,7 +33,10 @@ public class Main {
 
             System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
             reqMonName = Habitat.keyboard.nextLine();
-
+            if (reqMonName.equalsIgnoreCase("Next")) {
+                break;
+            }
+         
             int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
             
             int reqMonOut = (int)(Math.random() * 3 - 1 + 1) - 1;
@@ -41,13 +44,13 @@ public class Main {
             //uSE MATCHINg name stuff with something or something then find in monkey list
             switch (reqMonOut) {
                 case 1:
-                    System.out.println(monkeyList.get(reqMonNum));
+                    System.out.println(Monkey.monkeyList.get(reqMonNum));
                     break;
                 case 2:
-                    System.out.println(monkeyName.get(reqMonNum) + " is " + monkeyAges[reqMonNum] + " years old and " + monkeyHeights[reqMonNum] + " inches tall");
+                    System.out.println(Monkey.monkeyNames.get(reqMonNum) + " is " + Monkey.monkeyAges[reqMonNum] + " years old and " + Monkey.monkeyHeights[reqMonNum] + " inches tall");
                     break;
                 case 3:
-                    System.out.println((monkeyList.get(reqMonNum)).getMonkeyInfo());
+                    System.out.println((Monkey.monkeyList.get(reqMonNum)).getMonkeyInfo());
             }
         }
 
