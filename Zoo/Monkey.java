@@ -11,27 +11,34 @@ package Zoo;
     public static int[] monkeyAges = new int[5];
     public static double[] monkeyHeights = new double[5];
     
-
-    //constructor for creating a Monkey
+    /* MONKEY
+                    __------__
+              /~          ~\
+             |    //^\\//^\|
+           /~~\  ||  o| |o|:~\
+          | |6   ||___|_|_||:|
+           \__.  /      o  \/'
+            |   (       O   )
+   /~~~~\    `\  \         /
+  | |~~\ |     )  ~------~`\
+ /' |  | |   /     ____ /~~~)\
+(_/'   | | |     /'    |    ( |
+       | | |     \    /   __)/ \
+       \  \ \      \/    /' \   `\
+         \  \|\        /   | |\___|
+           \ |  \____/     | |
+           /^~>  \        _/ <
+          |  |         \       \
+          |  | \        \        \
+          -^-\  \       |        )
+               `\_______/^\______/
+      */
 
     
+    //constructor for creating a Monkey    
     public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
 
       super(monkeyName, monkeyAge, monkeyGender, monkeyHeight);
-
-      //Sync added values to more public ones
-      // this.age = monkeyAge;
-      // this.name = monkeyName;
-      // this.height = monkeyHeight;
-  
-      // //Taking char and making it a string for gender
-      // if (monkeyGender == 'm' || monkeyGender == 'M') {
-      //     this.gender = "male";
-      // } else if (monkeyGender == 'f' || monkeyGender == 'F') {
-      //     this.gender = "female";
-      // } else {
-      //     this.gender = "other";
-      // }
   
       System.out.println(this.name + ", the monkey has been registered.");
     }
@@ -66,7 +73,7 @@ package Zoo;
       return this.name + ", the " + this.gender + " monkey is " + this.age + " years old.";
     }
 
-    
+    //Call with "Monkey".getMonkeyInfo();
     public Monkey getMonkeyInfo() {
       Monkey searchMatch = null;
       for (Monkey monkeyLst : monkeyList) {

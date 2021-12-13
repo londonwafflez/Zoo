@@ -1,7 +1,7 @@
 package Zoo;
 
 import java.util.ArrayList;
-
+import java.lang.Math.*;
 
 public class Main {
 
@@ -24,8 +24,30 @@ public class Main {
         Mary.addMonkeyToList();
 
         //Printing info to make sure everything checks out
-        System.out.println(Henry.name + " is " + Henry.age + " and likes to dance.");
-        System.out.println("What do we know about Emma? \n" + Emma.getMonkeyInfo());
+        // System.out.println(Henry.name + " is " + Henry.age + " and likes to dance.");
+        // System.out.println("What do we know about Emma? \n" + Emma.getMonkeyInfo());
+
+        while (!(reqMonInfo.name.equalsIgnoreCase("Next"))) {
+
+            System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
+            String reqMonName = Habitat.keyboard.nextLine();
+
+            reqMonName.getMonkeyInfo();
+
+            int reqMonOut = (int)(Math.random() * 3 - 1 + 1) - 1;
+
+            switch (reqMonOut) {
+                case 1:
+                    System.out.println(reqMon);
+                    break;
+                case 2:
+                    System.out.println(reqMonInfo.name + " is " + reqMonInfo.age + " years old and " + reqMonInfo.height + " inches tall");
+                    break;
+                case 3:
+                    System.out.println(reqMonInfo.getMonkeyInfo());
+            }
+        }
+
         Habitat.passTime(2);
         System.out.println(Monkey.monkeyNames.get(2) + ", the third monkey's age is " + Monkey.monkeyAges[2] + ".");
     }

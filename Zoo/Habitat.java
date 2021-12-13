@@ -1,4 +1,5 @@
 package Zoo;
+import java.util.Scanner;
 
 public class Habitat {
     static int year = 2021;
@@ -21,4 +22,6 @@ public class Habitat {
 
         System.out.println(years + " years have passed");
     }
+    
+    public static Scanner keyboard = new Scanner(System.in);
 }
