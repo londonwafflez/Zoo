@@ -70,10 +70,52 @@ package Zoo;
     
     //Adding a toString for when a created Monkey is printed
     public String toString() {
-      return this.name + ", the " + this.gender + " monkey is " + this.age + " years old.";
+
+      int reqMonOut = (int)(Math.random() * 3 - 1 + 1) + 1;
+
+      try {
+          switch (reqMonOut) {
+            case 1:
+              return("What do we know about " + this.name + "? \n We know that this " + this.gender + ", " + this.age + " year old monkey is " + this.height + " inches tall.");
+              break;
+                
+
+            case 2:
+              return(this.name + " is " + this.age + " years old and " + this.height + " inches tall");
+              break;
+
+            case 3:
+              return(this.getMonkeyInfo());
+          }
+      } catch (ArrayIndexOutOfBoundsException e) {
+          System.out.println("Problem with toString when printing Monkey object \n Case: " + reqMonOut + "\nError: " + e);
+      }
     }
 
-    //Call with "Monkey".getMonkeyInfo();
+    //Called with [Class].getMonkeyInfo([name])
+    public static Monkey getMonkeyInfo(String reqMonName) {
+      
+      String search = "Searching. "; 
+      for (int i = 0; i < (int)Math.random(); i++) {
+        System.out.println(search);
+        Thread.sleep(250);
+        search = search.concat(". ");
+      }
+
+      int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
+
+
+      try{
+        System.out.println("Complete!");
+        Thread.sleep(1000);
+
+        return monkeyList.get(reqMonNum);
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Error with getMonkeyInfo \n Error: " + e);
+      }
+    }
+    
+    //Call with [Monkey].getMonkeyInfo();
     public Monkey getMonkeyInfo() {
       Monkey searchMatch = null;
       for (Monkey monkeyLst : monkeyList) {
@@ -82,6 +124,6 @@ package Zoo;
           break;
         }
       }
-      return searchMatch;
+      return "Info on " +  searchMatch.name + ": " + searchMatch;
     }
   }

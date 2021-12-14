@@ -1,7 +1,9 @@
 package Zoo;
 
 import java.util.ArrayList;
+import java.io.FileNotFoundException;
 import java.lang.Math.*;
+import java.nio.file.DirectoryNotEmptyException;
 
 public class Main {
 
@@ -27,31 +29,22 @@ public class Main {
         // System.out.println(Henry.name + " is " + Henry.age + " and likes to dance.");
         // System.out.println("What do we know about Emma? \n" + Emma.getMonkeyInfo());
 
-        String reqMonName;
+        String reqMonName = "";
         
         while (!(reqMonName.equalsIgnoreCase("Next"))) {
 
             System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
             reqMonName = Habitat.keyboard.nextLine();
+            Habitat.newLn();
+
             if (reqMonName.equalsIgnoreCase("Next")) {
                 break;
             }
-         
-            int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
             
-            int reqMonOut = (int)(Math.random() * 3 - 1 + 1) - 1;
-               
-            //uSE MATCHINg name stuff with something or something then find in monkey list
-            switch (reqMonOut) {
-                case 1:
-                    System.out.println(Monkey.monkeyList.get(reqMonNum));
-                    break;
-                case 2:
-                    System.out.println(Monkey.monkeyNames.get(reqMonNum) + " is " + Monkey.monkeyAges[reqMonNum] + " years old and " + Monkey.monkeyHeights[reqMonNum] + " inches tall");
-                    break;
-                case 3:
-                    System.out.println((Monkey.monkeyList.get(reqMonNum)).getMonkeyInfo());
-            }
+            Monkey.getMonkeyInfo(reqMonName);
+            
+
+        Habitat.newLn();
         }
 
         Habitat.passTime(2);
