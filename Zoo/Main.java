@@ -3,7 +3,7 @@ package Zoo;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 import java.lang.Math.*;
-import java.nio.file.DirectoryNotEmptyException;
+import java.util.Date;
 
 public class Main {
 
@@ -44,7 +44,8 @@ public class Main {
             Monkey.getMonkeyInfo(reqMonName);
             
 
-        Habitat.newLn();
+            Habitat.newLn();
+            
         }
 
         Habitat.passTime(2);

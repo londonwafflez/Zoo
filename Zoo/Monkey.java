@@ -1,6 +1,7 @@
 package Zoo;
   //Importing ArrayList
   import java.util.ArrayList;
+  import java.util.Date;
 
 
   public class Monkey extends Animal {
@@ -73,45 +74,45 @@ package Zoo;
 
       int reqMonOut = (int)(Math.random() * 3 - 1 + 1) + 1;
 
-      try {
-          switch (reqMonOut) {
-            case 1:
-              return("What do we know about " + this.name + "? \n We know that this " + this.gender + ", " + this.age + " year old monkey is " + this.height + " inches tall.");
-              break;
-                
+      
+      switch (reqMonOut) {
+        case 1:
+          return "What do we know about " + this.name + "? \n We know that this " + this.gender + ", " + this.age + " year old monkey is " + this.height + " inches tall.";
 
-            case 2:
-              return(this.name + " is " + this.age + " years old and " + this.height + " inches tall");
-              break;
-
-            case 3:
-              return(this.getMonkeyInfo());
-          }
-      } catch (ArrayIndexOutOfBoundsException e) {
-          System.out.println("Problem with toString when printing Monkey object \n Case: " + reqMonOut + "\nError: " + e);
+        case 2:
+          return this.name + " is " + this.age + " years old and " + this.height + " inches tall";
+        
+        case 3: 
+          return "Info on " + this.name + ": \nAge: " + this.age + "\nGender: " + this.gender + "\nHeight: " + this.height;
+        
+        default:
+          return this.name + ", a" + this.gender + "monkey is " + this.age + " years old and " + this.height + "tall";
       }
     }
+    
 
     //Called with [Class].getMonkeyInfo([name])
-    public static Monkey getMonkeyInfo(String reqMonName) {
+    public static void getMonkeyInfo(String reqMonName) {
       
       String search = "Searching. "; 
       for (int i = 0; i < (int)Math.random(); i++) {
         System.out.println(search);
-        Thread.sleep(250);
+        //Monkey.sleep(250); See 115
         search = search.concat(". ");
       }
 
       int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
 
+      System.out.println(reqMonNum);
 
-      try{
+      if (reqMonNum == -1) {
+        System.out.println("Search failed try again: \nCheck caps \nCheck spelling \netc...");
+      } else {
+
         System.out.println("Complete!");
-        Thread.sleep(1000);
+        //Monkey.sleep(1000); I have no idea how to use it also at 102
 
-        return monkeyList.get(reqMonNum);
-      } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Error with getMonkeyInfo \n Error: " + e);
+        System.out.println(monkeyList.get(reqMonNum));
       }
     }
     
@@ -124,6 +125,6 @@ package Zoo;
           break;
         }
       }
-      return "Info on " +  searchMatch.name + ": " + searchMatch;
+      return searchMatch;
     }
   }
