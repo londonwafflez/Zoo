@@ -1,12 +1,12 @@
 package Zoo;
 
 import java.util.ArrayList;
-import java.io.FileNotFoundException;
 import java.lang.Math.*;
+import java.io.InterruptedIOException;
+import java.io.IOException;  
 import java.util.Date;
 
 public class Main {
-
     public static void main(String[] args) {
 
         
@@ -41,15 +41,51 @@ public class Main {
                 break;
             }
             
+            Habitat.newLn(5);
+            
             Monkey.getMonkeyInfo(reqMonName);
-            
 
-            Habitat.newLn();
+            Habitat.newLn(2);
             
+            Habitat.sleep(1500);
         }
 
-        Habitat.passTime(2);
-        System.out.println(Monkey.monkeyNames.get(2) + ", the third monkey's age is " + Monkey.monkeyAges[2] + ".");
-    }
+        Habitat.sleep(1000);
 
+        Habitat.passTime(2);
+
+        Habitat.sleep(1500);
+
+        Habitat.newLn();
+
+        int randMon = (int)(Math.random() * 4 - 0);
+        int randMon1 = randMon + 1;
+        String randMonSuffix = "";
+
+        switch (randMon) {
+            case 0:
+                randMonSuffix = "st";
+                break;
+            case 1:
+                randMonSuffix = "nd";
+                break;
+            case 2:
+                randMonSuffix = "rd";
+                break;
+            case 3:
+            case 4:
+                randMonSuffix = "th";
+                break;
+            default:
+                System.out.println("Recheck switch case for randMon");
+                System.exit(1);
+        }
+            System.out.println("Random monkey info:\n" + Monkey.monkeyNames.get(randMon) + ", the " + randMon1 + randMonSuffix + " monkey's age is " + Monkey.monkeyAges[randMon] + ".");
+
+            Habitat.sleep(2000);
+
+            Monkey.monkeyList.get(randMon).MONKEY();
+
+            Habitat.sleep(2000);
+    }
 }

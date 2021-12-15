@@ -12,29 +12,28 @@ package Zoo;
     public static int[] monkeyAges = new int[5];
     public static double[] monkeyHeights = new double[5];
     
-    /* MONKEY
-                    __------__
-              /~          ~\
-             |    //^\\//^\|
-           /~~\  ||  o| |o|:~\
-          | |6   ||___|_|_||:|
-           \__.  /      o  \/'
-            |   (       O   )
-   /~~~~\    `\  \         /
-  | |~~\ |     )  ~------~`\
- /' |  | |   /     ____ /~~~)\
-(_/'   | | |     /'    |    ( |
-       | | |     \    /   __)/ \
-       \  \ \      \/    /' \   `\
-         \  \|\        /   | |\___|
-           \ |  \____/     | |
-           /^~>  \        _/ <
-          |  |         \       \
-          |  | \        \        \
-          -^-\  \       |        )
-               `\_______/^\______/
-      */
-
+    public void MONKEY() {
+      System.out.println("                __------__ ");
+      System.out.println("              /~          ~\\ ");
+      System.out.println("             |    //^\\\\//^\\| ");
+      System.out.println("           /~~\\  ||  o| |o|:~\\ ");
+      System.out.println("          | |6   ||___|_|_||:| ");
+      System.out.println("           \\__.  /      o  \\/' ");
+      System.out.println("            |   (       O   ) ");
+      System.out.println("   /~~~~\\    `\\  \\         / ");
+      System.out.println("  | |~~\\ |     )  ~------~`\\ ");
+      System.out.println(" /' |  | |   /     ____ /~~~)\\ ");
+      System.out.println("(_/'   | | |     /'    |    ( | ");
+      System.out.println("       | | |     \\    /   __)/ \\ ");
+      System.out.println("       \\  \\ \\      \\/    /' \\   `\\ ");
+      System.out.println("         \\  \\|\\        /   | |\\___| ");
+      System.out.println("           \\ |  \\____/     | | ");
+      System.out.println("           /^~>  \\        _/ < ");
+      System.out.println("          |  |         \\       \\ ");
+      System.out.println("          |  | \\        \\        \\ ");
+      System.out.println("          -^-\\  \\       |        ) ");
+      System.out.println("               `\\_______/^\\______/ ");
+    }
     
     //constructor for creating a Monkey    
     public Monkey(String monkeyName, int monkeyAge, char monkeyGender, double monkeyHeight) {
@@ -77,7 +76,7 @@ package Zoo;
       
       switch (reqMonOut) {
         case 1:
-          return "What do we know about " + this.name + "? \n We know that this " + this.gender + ", " + this.age + " year old monkey is " + this.height + " inches tall.";
+          return "What do we know about " + this.name + "? \nWe know that this " + this.gender + ", " + this.age + " year old monkey is " + this.height + " inches tall.";
 
         case 2:
           return this.name + " is " + this.age + " years old and " + this.height + " inches tall";
@@ -95,22 +94,24 @@ package Zoo;
     public static void getMonkeyInfo(String reqMonName) {
       
       String search = "Searching. "; 
-      for (int i = 0; i < (int)Math.random(); i++) {
-        System.out.println(search);
-        //Monkey.sleep(250); See 115
+
+      for (int i = 0; i < (int)(Math.random() * 10 + 2) + 1; i++) {
         search = search.concat(". ");
+        System.out.println(search);
+        Habitat.sleep(500);
+        Habitat.newLn(20);
       }
 
       int reqMonNum = Monkey.monkeyNames.indexOf(reqMonName);
 
-      System.out.println(reqMonNum);
-
       if (reqMonNum == -1) {
         System.out.println("Search failed try again: \nCheck caps \nCheck spelling \netc...");
+        Habitat.newLn();
       } else {
 
         System.out.println("Complete!");
-        //Monkey.sleep(1000); I have no idea how to use it also at 102
+
+        Habitat.newLn();
 
         System.out.println(monkeyList.get(reqMonNum));
       }
