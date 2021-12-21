@@ -17,13 +17,17 @@ public class Main {
         Monkey Emma = new Monkey("Emma", 5, 'F', 12.2);
         Monkey Mary = new Monkey("Mary", 6, 'f', 11.7);
 
+        Habitat.sleep(1500);
         Habitat.newLn();
 
-        Henry.addMonkeyToList();
-        Jack.addMonkeyToList();
-        Jill.addMonkeyToList();
-        Emma.addMonkeyToList();
-        Mary.addMonkeyToList();
+        Henry.addAnimalToList();
+        Jack.addAnimalToList();
+        Jill.addAnimalToList();
+        Emma.addAnimalToList();
+        Mary.addAnimalToList();
+
+        Habitat.newLn();
+        Habitat.sleep(1000);
 
         //Printing info to make sure everything checks out
         // System.out.println(Henry.name + " is " + Henry.age + " and likes to dance.");
@@ -33,12 +37,16 @@ public class Main {
         
         while (!(reqMonName.equalsIgnoreCase("Next"))) {
 
-            System.out.println("Which monkey would you like want info on? Type 'Next' when you're done");
+            System.out.println("Which monkey would you like want info on? Type 'List' to show names of monkeys or 'Next' when you're done");
             reqMonName = Habitat.keyboard.nextLine();
             Habitat.newLn();
 
             if (reqMonName.equalsIgnoreCase("Next")) {
                 break;
+            }
+
+            if (reqMonName.equalsIgnoreCase("List")) {
+                Monkey.monkeyNames.forEach( (monName) -> { System.out.println(monName); } );
             }
             
             Habitat.newLn(5);
@@ -51,10 +59,6 @@ public class Main {
         }
 
         Habitat.sleep(1000);
-
-        Habitat.passTime(2);
-
-        Habitat.sleep(1500);
 
         Habitat.newLn();
 
@@ -80,12 +84,17 @@ public class Main {
                 System.out.println("Recheck switch case for randMon");
                 System.exit(1);
         }
-            System.out.println("Random monkey info:\n" + Monkey.monkeyNames.get(randMon) + ", the " + randMon1 + randMonSuffix + " monkey's age is " + Monkey.monkeyAges[randMon] + ".");
 
-            Habitat.sleep(2000);
+        System.out.println("Random monkey info:\n" + Monkey.monkeyNames.get(randMon) + ", the " + randMon1 + randMonSuffix + " monkey's age is " + Monkey.monkeyAges[randMon] + ".");
+        Habitat.sleep(2000);
 
-            Monkey.monkeyList.get(randMon).MONKEY();
+        Monkey.monkeyList.get(randMon).MONKEY();
+        Habitat.sleep(2000);
 
-            Habitat.sleep(2000);
+        System.out.println("Where would you like to go next? \nAvailable habitats:");
+        //for System.out.println()
+        String goNext = Habitat.keyboard.nextLine();
+
+
     }
 }

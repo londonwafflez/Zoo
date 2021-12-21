@@ -5,7 +5,8 @@ package Zoo;
 
 
   public class Monkey extends Animal {
-    
+    //Habitat.initialize()
+
     //Defining lists
     public static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
     public static ArrayList<String> monkeyNames = new ArrayList<String>();
@@ -44,28 +45,24 @@ package Zoo;
     }
 
     public void addMonkeyToList() {
-      
       monkeyList.add(this);
 
       monkeyNames.add(this.name);
       
       for (int i = 0; i < 5; i++) {
-        if (monkeyAges[i] == 0) {
-          monkeyAges[i] = this.age;
-        }
-      } 
-  
-      
+          if (monkeyAges[i] == 0) {
+              monkeyAges[i] = this.age;
+          }
+      }
+
       int i1 = 0;
       while (i1 < 5) {
-        if (monkeyHeights[i1] == 0) {
+          if (monkeyHeights[i1] == 0) {
           monkeyHeights[i1] = this.height;
-        }
+          }
       i1++;
-
       }
     }
-  
 
     
     //Adding a toString for when a created Monkey is printed
@@ -94,6 +91,8 @@ package Zoo;
     public static void getMonkeyInfo(String reqMonName) {
       
       String search = "Searching. "; 
+
+      Habitat.newLn(20);
 
       for (int i = 0; i < (int)(Math.random() * 10 + 2) + 1; i++) {
         search = search.concat(". ");
